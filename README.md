@@ -27,12 +27,6 @@ Install using pip:
 pip install rdga_4k
 ```
 
-Or directly from the source:
-
-```bash
-pip install git+https://github.com/aquinordg/rdga_4k.git
-```
-
 ---
 
 ## 🚀 Usage
