@@ -1,7 +1,7 @@
 ![Project](https://img.shields.io/badge/Project-rdga_4k-blue)
 ![Author](https://img.shields.io/badge/Author-aquinordg-green)
 ![Python](https://img.shields.io/badge/Python-3.13-blue)
-![Version](https://img.shields.io/badge/Version-1.0-orange)
+![Version](https://img.shields.io/badge/Version-0.1.1-orange)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 # rdga_4k (Random Data Generator Algorithm for Clustering)
@@ -21,11 +21,16 @@ The rdga_4k library generates synthetic datasets tailored for clustering algorit
 
 ## 🛠 Installation
 
-Install using *git* and *pip install*:
+Install using pip:
+
+```bash
+pip install rdga_4k
+```
+
+Or directly from the source:
 
 ```bash
 pip install git+https://github.com/aquinordg/rdga_4k.git
-
 ```
 
 ---
@@ -108,6 +113,37 @@ Generates a labeled dataset with categorical features divided into multiple cate
 
 ```python
 X, y = canard(n_feat=10, n_cat=3, rate=[50, 50], lmbd=5, eps=0.2, random_state=42)
+```
+
+---
+
+### `get_rate`
+
+Helper function that generates balanced and unbalanced `rate` lists for use with `catbird` or `canard`.
+
+#### Parameters
+
+- `N` (int): Approximate total number of examples. Must be greater than 1.
+- `k` (int): Number of clusters. Must be greater than 1.
+- `n_min` (int): Minimum number of examples per cluster.
+
+#### Returns
+- `list`: A list with two elements:
+  - `rate[0]`: Balanced rate — equal distribution across clusters.
+  - `rate[1]`: Unbalanced rate — decreasing distribution across clusters.
+
+#### Example
+
+```python
+from rdga_4k import get_rate, catbird
+
+rate = get_rate(N=500, k=3, n_min=20)
+
+# Balanced
+X, y = catbird(n_feat=10, feat_sig=[3, 2, 2], rate=rate[0], random_state=42)
+
+# Unbalanced
+X, y = catbird(n_feat=10, feat_sig=[3, 2, 2], rate=rate[1], random_state=42)
 ```
 
 ---
