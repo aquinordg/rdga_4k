@@ -1,7 +1,7 @@
 ![Project](https://img.shields.io/badge/Project-rdga_4k-blue)
 ![Author](https://img.shields.io/badge/Author-aquinordg-green)
 ![Python](https://img.shields.io/badge/Python-3.13-blue)
-![Version](https://img.shields.io/badge/Version-0.1.1-orange)
+![Version](https://img.shields.io/badge/Version-1.0.0-orange)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 # rdga_4k (Random Data Generator Algorithm for Clustering)
